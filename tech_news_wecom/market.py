@@ -31,8 +31,11 @@ def fetch_sse_composite_snapshot() -> IndexSnapshot | None:
         parts = payload.split("~")
         name = parts[1]
         code = parts[2]
-        price = float(parts[3]) if parts[3] else None
-        pct = float(parts[4]) if parts[4] else None
+        # parts[3]: 最新价
+        # parts[4]: 涨跌点数
+        # parts[5]: 涨跌幅（%）
+        price = float(parts[3]) if len(parts) > 3 and parts[3] else None
+        pct = float(parts[5]) if len(parts) > 5 and parts[5] else None
         return IndexSnapshot(name=name, code=code, price=price, pct=pct)
     except Exception:
         return None
@@ -49,4 +52,3 @@ def build_market_context(*, threshold_pct: float = 2.0) -> str | None:
         f"上证指数监控：今日 {direction}（{snap.pct:+.2f}%），"
         f"请尝试用输入新闻解释主要原因；如无法从输入中找到依据，请明确写“仅从本次输入新闻无法确定主要原因，待观察”。"
     )
-

@@ -90,4 +90,7 @@ def run_once(settings: Settings, *, repo_root: Path | None = None) -> dict:
         "date": date_label,
         "concepts": [c.name for c in concepts],
         "concept_buckets": {k: len(v) for k, v in buckets.items()} if buckets else {},
+        "llm_model": settings.llm_model,
+        "llm_base_url": settings.llm_base_url,
+        "briefing_top_n": settings.briefing_top_n,
     }
