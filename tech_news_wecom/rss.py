@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 @dataclass(frozen=True)
@@ -43,11 +44,13 @@ def fetch_rss_items(urls: list[str], *, limit: int = 50) -> list[RssItem]:
 
     for url in urls:
         parsed = feedparser.parse(url)
-        feed_title = (
-            getattr(parsed.feed, "title", None)
-            or getattr(parsed.feed, "link", None)
-            or url
-        )
+        feed_title = getattr(parsed.feed, "title", None) or getattr(parsed.feed, "link", None) or url
+        try:
+            host = urlparse(url).netloc.lower()
+        except Exception:
+            host = ""
+        if host == "news.google.com":
+            feed_title = "Google News"
         for entry in parsed.entries[:limit]:
             title = (getattr(entry, "title", "") or "").strip()
             link = (getattr(entry, "link", "") or "").strip()
