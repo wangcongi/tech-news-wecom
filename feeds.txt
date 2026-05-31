@@ -1,6 +1,21 @@
 # 一行一个 RSS/Atom URL（可自行增删）
+#
+# 国外
 https://www.theverge.com/rss/index.xml
 https://feeds.arstechnica.com/arstechnica/index
 https://www.wired.com/feed/rss
 https://hnrss.org/frontpage
+#
+# 国内（科技/产业/硬件/AI/智能驾驶等）
+https://www.ithome.com/rss/
+https://www.ifanr.com/feed
+https://36kr.com/feed
+https://36kr.com/feed-newsflash
+https://sspai.com/feed
+#
+# 雷峰网（按需删减）
+https://www.leiphone.com/feed/categoryRss/name/ai
+https://www.leiphone.com/feed/categoryRss/name/transportation
+https://www.leiphone.com/feed/categoryRss/name/robot
+https://www.leiphone.com/feed/categoryRss/name/zaobao
 
