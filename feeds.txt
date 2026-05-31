@@ -13,6 +13,9 @@ https://36kr.com/feed
 https://36kr.com/feed-newsflash
 https://sspai.com/feed
 https://www.zhihu.com/rss
+https://rsshub.app/zhihu/daily
+https://plink.anyfeeder.com/zaobao/realtime/china
+https://rsshub.app/zhihu/hotlist
 https://www.ruanyifeng.com/blog/atom.xml
 https://tech.meituan.com/feed
 https://www.solidot.org/index.rss
