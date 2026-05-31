@@ -17,6 +17,17 @@ def _today_label_shanghai() -> str:
     return datetime.now(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d")
 
 
+def _limit_wecom_markdown(content: str, *, max_len: int = 4096) -> str:
+    if len(content) <= max_len:
+        return content
+    suffix = "\n\n> （消息过长，已自动截断）"
+    keep = max_len - len(suffix)
+    if keep <= 0:
+        return content[:max_len]
+    trimmed = content[:keep].rstrip()
+    return trimmed + suffix
+
+
 def run_once(settings: Settings, *, repo_root: Path | None = None) -> dict:
     root = repo_root or Path(__file__).resolve().parents[1]
     urls = load_feed_urls(root)
@@ -40,10 +51,11 @@ def run_once(settings: Settings, *, repo_root: Path | None = None) -> dict:
         model=settings.llm_model,
         items=selected,
         date_label=date_label,
+        top_n=settings.briefing_top_n,
     )
 
     header = f"## {briefing.title}\n\n"
-    content = header + briefing.markdown
+    content = _limit_wecom_markdown(header + briefing.markdown)
     if settings.wecom_mode == "webhook":
         assert settings.wecom_webhook
         send_markdown(settings.wecom_webhook, content)

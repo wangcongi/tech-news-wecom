@@ -22,6 +22,7 @@ class Settings:
     timezone: str = "Asia/Shanghai"
     max_items: int = 20
     concepts_path: str | None = "concepts.json"
+    briefing_top_n: int = 5
 
 
 def _load_secrets_file(secrets_path: Path) -> dict:
@@ -88,6 +89,7 @@ def load_settings(repo_root: Path | None = None) -> Settings:
     ).strip()
 
     max_items = int(os.getenv("MAX_ITEMS") or secrets.get("max_items") or 20)
+    briefing_top_n = int(os.getenv("BRIEFING_TOP_N") or secrets.get("briefing_top_n") or 5)
     concepts_path = (
         os.getenv("CONCEPTS_PATH")
         or secrets.get("concepts_path")
@@ -132,4 +134,5 @@ def load_settings(repo_root: Path | None = None) -> Settings:
         llm_model=llm_model,
         max_items=max_items,
         concepts_path=concepts_path,
+        briefing_top_n=briefing_top_n,
     )

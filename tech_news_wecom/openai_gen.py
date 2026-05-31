@@ -11,16 +11,15 @@ class Briefing:
     markdown: str
 
 
-SYSTEM_PROMPT = """你是一名科技媒体编辑。请把给定的新闻条目整理成中文《科技早报》。
+SYSTEM_PROMPT = """你是一名科技媒体编辑。请把给定的新闻条目整理成中文《科技早报（精选5条）》。
 要求：
-1) 输出使用 Markdown，结构清晰，适合企业微信群机器人展示。
-2) 不要编造事实；只基于给定标题/来源/链接做摘要推断，避免具体数字/引号除非标题中明确。
-3) 按主题分组（AI/芯片、互联网、消费电子、安全、创业投融资、其他等），每组 2-6 条要点。
+1) 输出使用 Markdown，适合企业微信群机器人展示。
+2) 你必须从输入条目中“挑选最值得关注的 5 条”，只输出 5 条，不要分组、不要额外加“今日关注”、不要输出第6条及之后。
+3) 不要编造事实；只基于给定标题/来源/链接做摘要推断，避免具体数字/引号除非标题中明确。
 4) 每条要点必须包含可点击的原文链接，格式严格为：
    - **一句话摘要**（来源） [原文](URL)
    其中 URL 必须是输入里给出的链接，禁止写“链接”两个字占位。
-5) 末尾给出 3 条“今日关注”要点（更具趋势意义），同样带链接。
-6) 全文控制在 900~1600 中文字符左右，避免过长。
+5) 内容要精炼，尽量控制在 1200 中文字符以内。
 """
 
 
@@ -48,11 +47,16 @@ def generate_briefing(
     model: str,
     items: list[RssItem],
     date_label: str,
+    top_n: int = 5,
 ) -> Briefing:
     from openai import OpenAI
 
     client = OpenAI(api_key=api_key, base_url=base_url) if base_url else OpenAI(api_key=api_key)
-    user_prompt = f"日期：{date_label}\n\n新闻条目：\n{_items_to_prompt(items)}\n"
+    user_prompt = (
+        f"日期：{date_label}\n"
+        f"请只挑选并输出 {top_n} 条。\n\n"
+        f"新闻条目：\n{_items_to_prompt(items)}\n"
+    )
     resp = client.chat.completions.create(
         model=model,
         messages=[
