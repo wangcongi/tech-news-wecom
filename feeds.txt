@@ -13,9 +13,6 @@ https://36kr.com/feed
 https://36kr.com/feed-newsflash
 https://sspai.com/feed
 https://www.zhihu.com/rss
-https://rsshub.app/zhihu/daily
-https://plink.anyfeeder.com/zaobao/realtime/china
-https://rsshub.app/zhihu/hotlist
 https://www.ruanyifeng.com/blog/atom.xml
 https://tech.meituan.com/feed
 https://www.solidot.org/index.rss
@@ -26,3 +23,12 @@ https://www.leiphone.com/feed/categoryRss/name/ai
 https://www.leiphone.com/feed/categoryRss/name/transportation
 https://www.leiphone.com/feed/categoryRss/name/robot
 https://www.leiphone.com/feed/categoryRss/name/zaobao
+#
+# Google News（英文关键词覆盖；抓取后由模型中文总结）
+https://news.google.com/rss/search?q=(nvidia%20OR%20blackwell%20OR%20cuda%20OR%20gb200)&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(arm%20OR%20arm%20holdings%20OR%20armv9)&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(data%20center%20OR%20ai%20infrastructure%20OR%20hbm%20OR%20gpu%20cluster)&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(optical%20module%20OR%20silicon%20photonics%20OR%20cpo%20OR%20800g)&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(robotaxi%20OR%20autonomous%20driving%20OR%20waymo%20OR%20adas%20OR%20fsd)&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(humanoid%20robot%20OR%20robotics%20OR%20embodied%20ai%20OR%20dexterous%20hand)&hl=en-US&gl=US&ceid=US:en
+
