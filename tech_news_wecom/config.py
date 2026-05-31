@@ -22,7 +22,7 @@ class Settings:
     timezone: str = "Asia/Shanghai"
     max_items: int = 20
     concepts_path: str | None = "concepts.json"
-    briefing_top_n: int = 10
+    briefing_top_n: int = 5
     briefing_window_end_hour: int = 9
 
 
@@ -90,7 +90,7 @@ def load_settings(repo_root: Path | None = None) -> Settings:
     ).strip()
 
     max_items = int(os.getenv("MAX_ITEMS") or secrets.get("max_items") or 20)
-    briefing_top_n = int(os.getenv("BRIEFING_TOP_N") or secrets.get("briefing_top_n") or 10)
+    briefing_top_n = int(os.getenv("BRIEFING_TOP_N") or secrets.get("briefing_top_n") or 5)
     briefing_window_end_hour = int(
         os.getenv("BRIEFING_WINDOW_END_HOUR") or secrets.get("briefing_window_end_hour") or 9
     )

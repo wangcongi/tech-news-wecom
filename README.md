@@ -97,8 +97,8 @@ python -m tech_news_wecom.cli schedule
 
 ## 只推送“精选5条”
 
-默认只推送 10 条精选要点（AI 选择最重要的 10 条）。可用环境变量/`secrets.json` 调整：
-- `BRIEFING_TOP_N`（默认 `10`）
+默认只推送 5 条精选要点（AI 选择最重要的 5 条）。可用环境变量/`secrets.json` 调整：
+- `BRIEFING_TOP_N`（默认 `5`）
 
 ## 时间窗口（默认：昨日 09:00 至今日 09:00）
 
