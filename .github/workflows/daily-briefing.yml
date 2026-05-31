@@ -46,5 +46,13 @@ jobs:
           DEEPSEEK_BASE_URL: ${{ secrets.DEEPSEEK_BASE_URL }}
           DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL }}
           MAX_ITEMS: ${{ secrets.MAX_ITEMS }}
+          CONCEPTS_PATH: ${{ secrets.CONCEPTS_PATH }}
+          WECOM_MODE: ${{ secrets.WECOM_MODE }}
+          WECOM_CORPID: ${{ secrets.WECOM_CORPID }}
+          WECOM_CORPSECRET: ${{ secrets.WECOM_CORPSECRET }}
+          WECOM_AGENTID: ${{ secrets.WECOM_AGENTID }}
+          WECOM_TOUSER: ${{ secrets.WECOM_TOUSER }}
+          WECOM_TOPARTY: ${{ secrets.WECOM_TOPARTY }}
+          WECOM_TOTAG: ${{ secrets.WECOM_TOTAG }}
         run: |
           python -m tech_news_wecom.cli run-once

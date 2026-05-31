@@ -63,3 +63,34 @@ python -m tech_news_wecom.cli schedule
 ## RSS 源
 
 默认 RSS 列表在 `feeds.txt`，一行一个 URL，可自行增删。
+
+## 同花顺题材概念过滤（可选）
+
+如果你只想推送某些“题材/概念”相关的新闻，可以编辑 `concepts.json`，用“概念名 + 关键词”做本地过滤：
+- 只有标题/来源里命中关键词的条目才会进入早报
+- `concepts.json` 为空或不存在则不过滤
+
+也支持用环境变量覆盖路径：`CONCEPTS_PATH`（默认 `concepts.json`）。
+
+## 改成“私聊/应用消息”单独触达（不在群里公开）
+
+企业微信“群机器人 webhook”只能发到群里，群成员都会看到；要实现单独触达需要用“自建应用（应用消息）”。
+
+1) 在企业微信管理后台创建自建应用
+- 记录 `企业 ID（CorpID）`
+- 在应用里生成 `Secret（CorpSecret）`
+- 记录 `AgentId`
+
+2) 配置接收人
+- 单独某个人：`WECOM_TOUSER`（成员账号，多个用 `|` 分隔）
+- 或部门：`WECOM_TOPARTY`
+- 或标签：`WECOM_TOTAG`
+
+3) GitHub Secrets（Actions）里设置（示例）
+- `WECOM_MODE=app`
+- `WECOM_CORPID=...`
+- `WECOM_CORPSECRET=...`
+- `WECOM_AGENTID=1000002`
+- `WECOM_TOUSER=zhangsan|lisi`
+
+如果 `WECOM_MODE=webhook`（默认），则仍用群机器人 webhook 推送到群。

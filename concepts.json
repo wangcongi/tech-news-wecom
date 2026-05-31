@@ -1,0 +1,69 @@
+{
+  "_comment": "同花顺题材概念过滤（可选）。填你关心的概念名与关键词；为空则不过滤。",
+  "concepts": [
+    {
+      "name": "AI算力",
+      "keywords": ["AI算力", "算力", "智算", "推理", "训练", "大模型", "MoE", "token", "GPU", "NVIDIA", "英伟达", "AMD", "MI300", "H100", "B200", "HBM", "inference", "training", "accelerator"]
+    },
+    {
+      "name": "光模块",
+      "keywords": ["光模块", "光通信", "光互连", "光纤", "CPO", "硅光", "SiPh", "400G", "800G", "1.6T", "InfiniBand", "以太网", "Ethernet", "data center optics", "optics"]
+    },
+    {
+      "name": "PCB",
+      "keywords": ["PCB", "印制电路板", "电路板", "HDI", "高多层", "ABF", "载板", "封装基板", "substrate"]
+    },
+    {
+      "name": "存储芯片",
+      "keywords": ["存储", "DRAM", "HBM", "NAND", "SSD", "闪存", "内存", "Micron", "美光", "Samsung", "三星", "SK hynix", "海力士"]
+    },
+    {
+      "name": "液冷",
+      "keywords": ["液冷", "冷板", "浸没式", "浸没", "两相", "散热", "thermal", "cooling", "immersion", "direct-to-chip"]
+    },
+    {
+      "name": "低空经济",
+      "keywords": ["低空经济", "eVTOL", "飞行汽车", "空中出租车", "无人机", "UAV", "通航", "air taxi", "drone"]
+    },
+    {
+      "name": "机器人",
+      "keywords": ["机器人", "人形机器人", "具身智能", "humanoid", "robot", "automation", "自动化", "机械臂", "ROS"]
+    },
+    {
+      "name": "煤炭",
+      "keywords": ["煤炭", "煤矿", "动力煤", "焦煤", "煤价", "coal", "mining"]
+    },
+    {
+      "name": "商业航天",
+      "keywords": ["商业航天", "火箭", "发射", "卫星", "星座", "SpaceX", "Starlink", "Blue Origin", "ULA", "Ariane", "航天", "launch", "satellite"]
+    },
+    {
+      "name": "英伟达",
+      "keywords": ["NVIDIA", "英伟达", "CUDA", "DGX", "Blackwell", "Hopper", "H100", "B200", "Grace", "NVLink"]
+    },
+    {
+      "name": "算电协同",
+      "keywords": ["算电协同", "电力", "电网", "源网荷储", "储能", "虚拟电厂", "VPP", "能耗", "PUE", "power", "grid"]
+    },
+    {
+      "name": "数据中心",
+      "keywords": ["数据中心", "IDC", "机房", "colocation", "hyperscale", "云计算", "云厂商", "AI数据中心", "data center", "server"]
+    },
+    {
+      "name": "半导体",
+      "keywords": ["芯片", "晶圆", "EDA", "封装", "先进封装", "光刻", "ASML", "台积电", "TSMC", "英特尔", "Intel", "ARM", "RISC-V"]
+    },
+    {
+      "name": "自动驾驶",
+      "keywords": ["自动驾驶", "智驾", "Robotaxi", "FSD", "ADAS", "L2", "L3", "L4", "Waymo", "Cruise", "Tesla", "特斯拉"]
+    },
+    {
+      "name": "电影消费",
+      "keywords": ["电影", "票房", "影院", "院线", "流媒体", "Disney", "Marvel", "Netflix", "box office", "cinema", "streaming"]
+    },
+    {
+      "name": "网络安全",
+      "keywords": ["漏洞", "攻击", "泄露", "勒索", "零日", "0day", "TLS", "加密", "供应链安全", "安全"]
+    }
+  ]
+}
