@@ -1,0 +1,6 @@
+# 一行一个 RSS/Atom URL（可自行增删）
+https://www.theverge.com/rss/index.xml
+https://feeds.arstechnica.com/arstechnica/index
+https://www.wired.com/feed/rss
+https://hnrss.org/frontpage
+

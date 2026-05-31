@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.python-version
+.DS_Store
+
+# Secrets
+secrets.json
+.env
+
+# Local data
+data/
+*.sqlite3
+*.db
+
