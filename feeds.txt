@@ -12,10 +12,14 @@ https://www.ifanr.com/feed
 https://36kr.com/feed
 https://36kr.com/feed-newsflash
 https://sspai.com/feed
+https://www.zhihu.com/rss
+https://www.ruanyifeng.com/blog/atom.xml
+https://tech.meituan.com/feed
+https://www.solidot.org/index.rss
+https://www.v2ex.com/index.xml
 #
 # 雷峰网（按需删减）
 https://www.leiphone.com/feed/categoryRss/name/ai
 https://www.leiphone.com/feed/categoryRss/name/transportation
 https://www.leiphone.com/feed/categoryRss/name/robot
 https://www.leiphone.com/feed/categoryRss/name/zaobao
-
