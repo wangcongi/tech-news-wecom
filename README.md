@@ -94,3 +94,13 @@ python -m tech_news_wecom.cli schedule
 - `WECOM_TOUSER=zhangsan|lisi`
 
 如果 `WECOM_MODE=webhook`（默认），则仍用群机器人 webhook 推送到群。
+
+## 只推送“精选5条”
+
+默认只推送 5 条精选要点（AI 选择最重要的 5 条）。可用环境变量/`secrets.json` 调整：
+- `BRIEFING_TOP_N`（默认 `5`）
+
+## 上证指数大阳/大阴监控（可选）
+
+程序会尝试获取上证指数日涨跌幅，若绝对涨跌幅 ≥ 2% 则把“监控提示”作为上下文喂给模型，让模型在 5 条精选中优先纳入并解释原因（仅基于输入新闻，无法确定则会提示“待观察”）。
+该能力依赖公开行情接口，可能不稳定。

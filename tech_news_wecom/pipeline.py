@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 
 from .config import Settings
 from .concepts import filter_items_by_concepts, load_concepts
+from .market import build_market_context
 from .openai_gen import generate_briefing
 from .rss import fetch_rss_items, load_feed_urls, RssItem
 from .storage import SeenStore
@@ -28,6 +29,14 @@ def _limit_wecom_markdown(content: str, *, max_len: int = 4096) -> str:
     return trimmed + suffix
 
 
+def _disclaimer_markdown() -> str:
+    return (
+        "\n\n---\n"
+        "> 免责声明：本早报为基于公开 RSS 标题的自动化整理与摘要，可能存在遗漏/误差；"
+        "仅供信息参考，不构成任何投资建议或收益保证。请以原文为准并自行判断风险。"
+    )
+
+
 def run_once(settings: Settings, *, repo_root: Path | None = None) -> dict:
     root = repo_root or Path(__file__).resolve().parents[1]
     urls = load_feed_urls(root)
@@ -45,6 +54,7 @@ def run_once(settings: Settings, *, repo_root: Path | None = None) -> dict:
     base_pool = filtered_items or all_items
     selected = (new_items or base_pool)[: settings.max_items]
     date_label = _today_label_shanghai()
+    market_context = build_market_context()
     briefing = generate_briefing(
         api_key=settings.llm_api_key,
         base_url=settings.llm_base_url,
@@ -52,10 +62,11 @@ def run_once(settings: Settings, *, repo_root: Path | None = None) -> dict:
         items=selected,
         date_label=date_label,
         top_n=settings.briefing_top_n,
+        extra_context=market_context,
     )
 
     header = f"## {briefing.title}\n\n"
-    content = _limit_wecom_markdown(header + briefing.markdown)
+    content = _limit_wecom_markdown(header + briefing.markdown + _disclaimer_markdown())
     if settings.wecom_mode == "webhook":
         assert settings.wecom_webhook
         send_markdown(settings.wecom_webhook, content)
