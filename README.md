@@ -57,7 +57,7 @@ python -m tech_news_wecom.cli schedule
 3) Actions 工作流文件在 `/.github/workflows/daily-briefing.yml`
 
 说明：
-- GitHub Actions 的 cron 用 UTC；已配置为每天 `23:00 UTC` 触发（即北京时间次日 `07:00`）。
+- GitHub Actions 的 cron 用 UTC；已配置为每天 `01:00 UTC` 触发（即北京时间 `09:00`）。
 - 为避免重复推送，工作流使用 Actions Cache 持久化 `data/seen.sqlite3`（尽力而为，缓存偶尔可能失效）。
 
 ## RSS 源
@@ -97,8 +97,14 @@ python -m tech_news_wecom.cli schedule
 
 ## 只推送“精选5条”
 
-默认只推送 5 条精选要点（AI 选择最重要的 5 条）。可用环境变量/`secrets.json` 调整：
-- `BRIEFING_TOP_N`（默认 `5`）
+默认只推送 10 条精选要点（AI 选择最重要的 10 条）。可用环境变量/`secrets.json` 调整：
+- `BRIEFING_TOP_N`（默认 `10`）
+
+## 时间窗口（默认：昨日 09:00 至今日 09:00）
+
+早报只会从“时间窗口”内的新闻里做精选。默认窗口为北京时间“昨日 09:00（含）→ 今日 09:00（不含）”。
+可用环境变量/`secrets.json` 调整窗口结束小时：
+- `BRIEFING_WINDOW_END_HOUR`（默认 `9`，表示每日 09:00 截止）
 
 ## 上证指数大阳/大阴监控（可选）
 

@@ -13,7 +13,7 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     sub.add_parser("run-once", help="立即抓取并推送一次")
-    sub.add_parser("schedule", help="常驻：每天北京时间07:00执行")
+    sub.add_parser("schedule", help="常驻：每天北京时间09:00执行")
 
     args = parser.parse_args(argv)
     repo_root = Path(__file__).resolve().parents[1]

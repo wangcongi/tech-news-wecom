@@ -17,7 +17,7 @@ def run_daily_7am(*, repo_root: Path | None = None) -> None:
     settings = load_settings(repo_root)
     scheduler = BlockingScheduler(timezone=settings.timezone)
 
-    trigger = CronTrigger(hour=7, minute=0, timezone=settings.timezone)
+    trigger = CronTrigger(hour=9, minute=0, timezone=settings.timezone)
     scheduler.add_job(
         lambda: run_once(settings, repo_root=repo_root),
         trigger=trigger,
@@ -28,6 +28,5 @@ def run_daily_7am(*, repo_root: Path | None = None) -> None:
         misfire_grace_time=60 * 60,
     )
 
-    logger.info("Scheduler started: daily 07:00 (%s)", settings.timezone)
+    logger.info("Scheduler started: daily 09:00 (%s)", settings.timezone)
     scheduler.start()
-
