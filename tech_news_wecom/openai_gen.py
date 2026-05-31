@@ -32,13 +32,14 @@ def _items_to_prompt(items: list[RssItem]) -> str:
 def generate_briefing(
     *,
     api_key: str,
+    base_url: str | None,
     model: str,
     items: list[RssItem],
     date_label: str,
 ) -> Briefing:
     from openai import OpenAI
 
-    client = OpenAI(api_key=api_key)
+    client = OpenAI(api_key=api_key, base_url=base_url) if base_url else OpenAI(api_key=api_key)
     user_prompt = f"日期：{date_label}\n\n新闻条目：\n{_items_to_prompt(items)}\n"
     resp = client.chat.completions.create(
         model=model,

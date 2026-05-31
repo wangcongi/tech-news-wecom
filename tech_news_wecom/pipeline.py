@@ -30,8 +30,9 @@ def run_once(settings: Settings, *, repo_root: Path | None = None) -> dict:
     selected = (new_items or all_items)[: settings.max_items]
     date_label = _today_label_shanghai()
     briefing = generate_briefing(
-        api_key=settings.openai_api_key,
-        model=settings.openai_model,
+        api_key=settings.llm_api_key,
+        base_url=settings.llm_base_url,
+        model=settings.llm_model,
         items=selected,
         date_label=date_label,
     )
