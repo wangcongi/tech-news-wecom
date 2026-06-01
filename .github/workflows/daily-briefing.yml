@@ -5,8 +5,8 @@ on:
   schedule:
     # GitHub Actions cron uses UTC. 08:57 Asia/Shanghai == 00:57 UTC.
     - cron: "57 0 * * *"
-    # Test run: 11:21 Asia/Shanghai == 03:21 UTC.
-    - cron: "21 3 * * *"
+    # Test run: 11:26 Asia/Shanghai == 03:26 UTC.
+    - cron: "26 3 * * *"
 
 concurrency:
   group: daily-tech-briefing
