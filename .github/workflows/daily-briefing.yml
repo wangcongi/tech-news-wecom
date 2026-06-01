@@ -9,6 +9,9 @@ on:
     # Test run
     - cron: "26 11 * * *"
       timezone: "Asia/Shanghai"
+    # Temp test run (remove after verification)
+    - cron: "45 11 * * *"
+      timezone: "Asia/Shanghai"
 
 concurrency:
   group: daily-tech-briefing
