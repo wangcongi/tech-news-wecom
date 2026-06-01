@@ -3,8 +3,8 @@ name: Daily Tech Briefing (WeCom)
 on:
   workflow_dispatch: {}
   schedule:
-    # GitHub Actions cron uses UTC. 09:00 Asia/Shanghai == 01:00 UTC.
-    - cron: "0 1 * * *"
+    # GitHub Actions cron uses UTC. 08:57 Asia/Shanghai == 00:57 UTC.
+    - cron: "57 0 * * *"
 
 concurrency:
   group: daily-tech-briefing
