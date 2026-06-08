@@ -1,0 +1,102 @@
+[2026-06-07T08:57:02.9383403+08:00] Starting run-once
+Python=C:\Python314\python.exe
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Administrator\tech-news-wecom\tech_news_wecom\cli.py", line 37, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\Administrator\tech-news-wecom\tech_news_wecom\cli.py", line 23, in main
+    result = run_once(settings, repo_root=repo_root)
+  File "C:\Users\Administrator\tech-news-wecom\tech_news_wecom\pipeline.py", line 99, in run_once
+    briefing = generate_briefing(
+        api_key=settings.llm_api_key,
+    ...<5 lines>...
+        extra_context=market_context,
+    )
+  File "C:\Users\Administrator\tech-news-wecom\tech_news_wecom\openai_gen.py", line 119, in generate_briefing
+    resp = client.chat.completions.create(
+        model=model,
+    ...<4 lines>...
+        temperature=0.4,
+    )
+  File "C:\Python314\Lib\site-packages\openai\_utils\_utils.py", line 277, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python314\Lib\site-packages\openai\resources\chat\completions.py", line 590, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<31 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\openai\_base_client.py", line 1240, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\openai\_base_client.py", line 921, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        remaining_retries=remaining_retries,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\openai\_base_client.py", line 1020, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****081b is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+[2026-06-07T08:58:19.4014960+08:00] Finished run-once exit_code=1
+[2026-06-07T11:26:02.0598425+08:00] Starting run-once
+Python=C:\Python314\python.exe
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Administrator\tech-news-wecom\tech_news_wecom\cli.py", line 37, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\Administrator\tech-news-wecom\tech_news_wecom\cli.py", line 23, in main
+    result = run_once(settings, repo_root=repo_root)
+  File "C:\Users\Administrator\tech-news-wecom\tech_news_wecom\pipeline.py", line 99, in run_once
+    briefing = generate_briefing(
+        api_key=settings.llm_api_key,
+    ...<5 lines>...
+        extra_context=market_context,
+    )
+  File "C:\Users\Administrator\tech-news-wecom\tech_news_wecom\openai_gen.py", line 119, in generate_briefing
+    resp = client.chat.completions.create(
+        model=model,
+    ...<4 lines>...
+        temperature=0.4,
+    )
+  File "C:\Python314\Lib\site-packages\openai\_utils\_utils.py", line 277, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python314\Lib\site-packages\openai\resources\chat\completions.py", line 590, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<31 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\openai\_base_client.py", line 1240, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\openai\_base_client.py", line 921, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        remaining_retries=remaining_retries,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Python314\Lib\site-packages\openai\_base_client.py", line 1020, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****081b is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+[2026-06-07T11:27:25.0972881+08:00] Finished run-once exit_code=1

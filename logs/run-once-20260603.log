@@ -1,0 +1,19 @@
+[2026-06-03T08:57:02.6604349+08:00] Starting run-once
+[2026-06-03T09:20:01.6601328+08:00] Starting run-once
+Python=C:\Python314\python.exe
+[2026-06-03T09:20:16.3611574+08:00] Starting run-once
+Python=C:\Python314\python.exe
+[2026-06-03T09:24:43.3552848+08:00] Starting run-once
+Python=C:\Python314\python.exe
+[2026-06-03T09:25:01.2763215+08:00] Starting run-once
+Python=C:\Python314\python.exe
+[2026-06-03T09:25:27.6299216+08:00] Starting run-once
+Python=C:\Python314\python.exe
+[2026-06-03T09:27:55.2999374+08:00] Starting run-once
+Python=C:\Python314\python.exe
+{"feeds": 24, "items_total": 653, "items_in_window": 244, "items_filtered": 92, "items_new": 0, "items_used": 20, "date": "2026-06-03", "window_start": "2026-06-02T09:00:00+08:00", "window_end": "2026-06-03T09:00:00+08:00", "items_missing_published": 0, "concepts": ["AI算力", "光模块", "PCB", "存储芯片", "液冷", "低空经济", "机器人", "煤炭", "商业航天", "英伟达", "算电协同", "数据中心", "半导体", "自动驾驶", "电影消费", "网络安全"], "concept_buckets": {"AI算力": 44, "光模块": 1, "PCB": 0, "存储芯片": 3, "液冷": 0, "低空经济": 0, "机器人": 20, "煤炭": 0, "商业航天": 8, "英伟达": 41, "算电协同": 5, "数据中心": 6, "半导体": 23, "自动驾驶": 1, "电影消费": 6, "网络安全": 2}, "llm_model": "deepseek-v4-flash", "llm_base_url": "https://api.deepseek.com", "briefing_top_n": 5, "briefing_window_end_hour": 9}
+[2026-06-03T09:29:12.5063840+08:00] Finished run-once exit_code=0
+[2026-06-03T11:26:00.6018435+08:00] Starting run-once
+Python=C:\Python314\python.exe
+{"feeds": 24, "items_total": 713, "items_in_window": 159, "items_filtered": 79, "items_new": 0, "items_used": 20, "date": "2026-06-03", "window_start": "2026-06-02T09:00:00+08:00", "window_end": "2026-06-03T09:00:00+08:00", "items_missing_published": 0, "concepts": ["AI算力", "光模块", "PCB", "存储芯片", "液冷", "低空经济", "机器人", "煤炭", "商业航天", "英伟达", "算电协同", "数据中心", "半导体", "自动驾驶", "电影消费", "网络安全"], "concept_buckets": {"AI算力": 41, "光模块": 1, "PCB": 0, "存储芯片": 1, "液冷": 0, "低空经济": 0, "机器人": 21, "煤炭": 0, "商业航天": 4, "英伟达": 39, "算电协同": 4, "数据中心": 3, "半导体": 20, "自动驾驶": 1, "电影消费": 6, "网络安全": 1}, "llm_model": "deepseek-v4-flash", "llm_base_url": "https://api.deepseek.com", "briefing_top_n": 5, "briefing_window_end_hour": 9}
+[2026-06-03T11:27:32.2277157+08:00] Finished run-once exit_code=0
